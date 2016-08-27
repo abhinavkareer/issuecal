@@ -1,0 +1,2 @@
+# issuecal
+Github issue calculater
