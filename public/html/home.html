@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <label for="basic-url">Your Github URL</label>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">https://github.com/</span>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="repoUrl">
+      <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="getData()" type="button">Go!</button>
+      </span>
+    </div>
+
+    <br>
+    <div class="alert alert-danger" role="alert" ng-bind="errorMsg" ng-hide="errorMsg==''"></div>
+    <table class="table table-striped" ng-hide="errorMsg!=''">
+      <tr>
+
+        <th>
+        Open Issues
+        </th>
+        <th>
+        Open Issues in last 24 hours
+        </th>
+        <th>
+        Open Issues 24 hours to 7 days ago
+        </th>
+        <th>
+        Issues Opened more than 7 days ago
+        </th>
+
+    </tr>
+    <tr>
+
+      <td ng-bind="issues.total"></td>
+      <td ng-bind="issues.last24Hours"></td>
+      <td ng-bind="issues.last7Days"></td>
+      <td ng-bind="issues.beforelast7Days"></td>
+
+    </tr>
+
+
+    </table>
+  </div>
+
+</div>
