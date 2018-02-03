@@ -26,17 +26,17 @@ $scope.getOpenIssues=function(propVar,sinceVar){
 
   $scope.repoUrl=removeLastSlash($scope.repoUrl);
   var urlArr=$scope.repoUrl.split("/");
-  var authTokenParam="?access_token=c1104426da675d7ce3ae4d202744ac200ce8bf08"
-
+  var authTokenParam="?access_token=8862ba552c05ebc0d470d21c96f0986e3b1ba30d"
+  let repoUrl=$scope.repoUrl;
   if(urlArr[urlArr.length-1]!="issues")
   {
-    $scope.repoUrl=$scope.repoUrl+"/issues";
+    repoUrl=repoUrl+"/issues";
   }
 
   console.log($scope.repoUrl);
 
 
-  var myUrl     = "https://api.github.com/repos/"+$scope.repoUrl+authTokenParam+since;
+  var myUrl     = "https://api.github.com/repos/"+repoUrl+authTokenParam+since;
 
   $http(
       {
